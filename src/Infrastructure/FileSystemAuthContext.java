@@ -8,9 +8,7 @@ import domain.services.contracts.IUserRepository;
 import javax.annotation.Nullable;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class FileSystemAuthContext implements IAuthContext {

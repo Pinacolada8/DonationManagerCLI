@@ -2,8 +2,6 @@ package application.commands;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.inject.Inject;
-import domain.models.entities.User;
-import domain.models.entities.UserRole;
 import domain.services.ItemTypeService;
 import picocli.CommandLine;
 
