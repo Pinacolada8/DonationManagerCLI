@@ -116,7 +116,7 @@ public class FileSystemRepository<T extends BaseEntity> implements IRepository<T
         if (find(entity.getId()) == null)
             return false;
 
-        dbValues.remove(entity);
+        dbValues = dbValues.stream().filter(x -> !x.getId().equals(entity.getId())).collect(Collectors.toList());
         return save(dbValues);
     }
 
