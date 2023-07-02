@@ -1,0 +1,3 @@
+javac -d out/manual/DonationsManager -cp "lib/*" -sourcepath "src/" src/application/Main.java
+
+jar -cfe JarExample.jar application.Main lib/ out/manual/*
