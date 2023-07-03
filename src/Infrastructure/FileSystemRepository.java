@@ -123,13 +123,15 @@ public class FileSystemRepository<T extends BaseEntity> implements IRepository<T
     @Override
     public T update(T entity) {
         var dbValues = getAll();
-        var indexOfValue = dbValues.indexOf(entity);
+        for(int i = 0; i < dbValues.size(); i++){
+            if(dbValues.get(i).getId().equals(entity.getId())){
+                dbValues.set(i, entity);
+                save(dbValues);
+                return entity;
+            }
+        }
 
-        if (indexOfValue < 0 || dbValues.get(indexOfValue).getId() != entity.getId())
-            return null;
-
-        dbValues.set(indexOfValue, entity);
-        return entity;
+        return null;
     }
 
     // ====================================================================================== //

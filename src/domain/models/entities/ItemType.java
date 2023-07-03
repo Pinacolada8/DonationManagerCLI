@@ -3,6 +3,10 @@ package domain.models.entities;
 public class ItemType extends BaseEntity {
     private String name;
 
+    public ItemType() {
+        super();
+    }
+
     public ItemType(String name) {
         super();
         this.name = name;
